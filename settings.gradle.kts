@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Zlux"
 include(":app")
 include(":core")
+include(":favorite")

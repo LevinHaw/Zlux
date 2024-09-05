@@ -1,8 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Zlux" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Zlux" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/light_white</item>
+        <item name="colorSecondary">@color/dark_blue</item>
+        <item name="colorOnSecondary">@color/black_mild</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">?attr/colorPrimary</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.Zlux</item>
     </style>
 
     <style name="Theme.Zlux" parent="Base.Theme.Zlux" />

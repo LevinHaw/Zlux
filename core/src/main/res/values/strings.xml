@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_name">Movie name</string>
+    <string name="overview_text">overview text</string>
+    <string name="date">dd/mm/yyyy</string>
+    <string name="view">xxx.xxxx</string>
+</resources>
