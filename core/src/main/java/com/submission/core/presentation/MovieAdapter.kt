@@ -2,16 +2,14 @@ package com.submission.core.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.submission.core.R
 import com.submission.core.databinding.ItemMovieBinding
 import com.submission.core.domain.model.Movie
 
 class MovieAdapter(
     private var listMovie: List<Movie>
-): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
@@ -41,10 +39,12 @@ class MovieAdapter(
                 .load(movie.fullPosterPath)
                 .into(binding.ivPoster)
 
-            binding.tvTitleMovie.text = movie.title
-            binding.tvOverview.text = movie.overview
-            binding.tvDate.text = movie.releaseDate
-            binding.tvViews.text = movie.popularity.toString()
+            binding?.apply {
+                tvTitleMovie.text = movie.title
+                tvOverview.text = movie.overview
+                tvDate.text = movie.releaseDate
+                tvViews.text = movie.popularity.toString()
+            }
         }
     }
 
