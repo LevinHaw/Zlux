@@ -84,15 +84,9 @@
 # A resource is loaded with a relative path so the package of this class must be preserved.
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
-# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
--dontwarn org.codehaus.mojo.animal_sniffer.*
-
 # OkHttp platform used only on JVM and when Conscrypt dependency is available.
 -dontwarn okhttp3.internal.platform.ConscryptPlatform
 -dontwarn org.conscrypt.ConscryptHostnameVerifier
-
--dontwarn com.airbnb.lottie.**
--keep class com.airbnb.lottie.** {*;}
 
 #-------------------------------------------------
 # JetPack Navigation
@@ -106,44 +100,6 @@
 
 -keep class java.lang.invoke.** {*;}
 
-# Keep MovieRepository and its members
--keep class com.submission.core.data.datasource.MovieRepository { *; }
--keep class com.submission.core.** { *; }
-
-# Keep Resource classes and their members
--keep class com.submission.core.data.datasource.Resource$Error { *; }
--keep class com.submission.core.data.datasource.Resource$Loading { *; }
--keep class com.submission.core.data.datasource.Resource$Success { *; }
--keep class com.submission.core.data.datasource.Resource { *; }
-
-# Keep DataSource classes and their members
--keep class com.submission.core.data.datasource.local.LocalDataSource { *; }
--keep class com.submission.core.data.datasource.remote.RemoteDataSource { *; }
--keep class com.submission.core.data.datasource.remote.retrofit.ApiService { *; }
--keep class com.submission.core.data.datasource.local.room.MovieDao { *; }
-
-# Keep DI modules and their providers
--keep class  com.submission.core.di.** { *; }
--keep class  com.submission.core.di.DatabaseModule { *; }
--keep class  com.submission.core.di.DatabaseModule_ProvideDatabaseFactory { *; }
--keep class  com.submission.core.di.DatabaseModule_ProvideMovieDaoFactory { *; }
--keep class  com.submission.core.di.NetworkModule { *; }
--keep class  com.submission.core.di.NetworkModule_ProvideApiServiceFactory { *; }
--keep class  com.submission.core.di.NetworkModule_ProvideOkHttpClientFactory { *; }
-
-# Keep domain classes and their members
--keep class  com.submission.core.domain.model.Movie { *; }
--keep class  com.submission.core.domain.repository.IMovieRepository { *; }
--keep class  com.submission.core.domain.usecase.MovieInteractor { *; }
--keep class  com.submission.core.domain.usecase.MovieUseCase { *; }
-
-# Keep UI classes and their members
--keep class com.submission.core.presentation.MovieAdapter { *; }
--keep class com.submission.core.presentation.MovieAdapter$OnItemClickCallback { *;}
-
-# Keep utility classes
--keep class com.submission.core.utils.AppExecutors { *; }
--keep class com.submission.core.utils.DarkMode { *; }
 
 # Keep Hilt components
 -keep class * implements dagger.hilt.internal.GeneratedComponent { *; }
@@ -181,23 +137,12 @@
 
 # Please add these rules to your existing keep rules in order to suppress warnings.
 # This is generated automatically by the Android Gradle plugin.
--dontwarn com.submission.core.domain.usecase.MovieInteractor
--dontwarn com.submission.core.domain.usecase.MovieUseCase
--dontwarn com.submission.core.presentation.MovieAdapter$OnItemClickCallback
--dontwarn com.submission.core.presentation.MovieAdapter
--dontwarn com.submission.core.utils.AppExecutors
--dontwarn com.submission.core.utils.DarkMode
--dontwarn hilt_aggregated_deps._com_submission_core_di_DatabaseModule
--dontwarn hilt_aggregated_deps._com_submission_core_di_NetworkModule
--dontwarn hilt_aggregated_deps._com_submission_core_di_RepositoryModule
-
 -dontwarn com.submission.core.data.datasource.MovieRepository
 -dontwarn com.submission.core.data.datasource.Resource$Error
 -dontwarn com.submission.core.data.datasource.Resource$Loading
 -dontwarn com.submission.core.data.datasource.Resource$Success
 -dontwarn com.submission.core.data.datasource.Resource
 -dontwarn com.submission.core.data.datasource.local.LocalDataSource
--dontwarn com.submission.core.data.datasource.local.room.MovieDao
 -dontwarn com.submission.core.data.datasource.remote.RemoteDataSource
 -dontwarn com.submission.core.data.datasource.remote.retrofit.ApiService
 -dontwarn com.submission.core.di.DatabaseModule
@@ -208,3 +153,12 @@
 -dontwarn com.submission.core.di.NetworkModule_ProvideOkHttpClientFactory
 -dontwarn com.submission.core.di.RepositoryModule
 -dontwarn com.submission.core.domain.model.Movie
+-dontwarn com.submission.core.domain.usecase.MovieInteractor
+-dontwarn com.submission.core.domain.usecase.MovieUseCase
+-dontwarn com.submission.core.presentation.MovieAdapter$OnItemClickCallback
+-dontwarn com.submission.core.presentation.MovieAdapter
+-dontwarn com.submission.core.utils.AppExecutors
+-dontwarn com.submission.core.utils.DarkMode
+-dontwarn hilt_aggregated_deps._com_submission_core_di_DatabaseModule
+-dontwarn hilt_aggregated_deps._com_submission_core_di_NetworkModule
+-dontwarn hilt_aggregated_deps._com_submission_core_di_RepositoryModule

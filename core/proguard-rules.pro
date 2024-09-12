@@ -1,21 +1,36 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-keep class com.submission.core.data.datasource.MovieRepository { *; }
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep Resource classes and their members
+-keep class com.submission.core.data.datasource.Resource$Error { *; }
+-keep class com.submission.core.data.datasource.Resource$Loading { *; }
+-keep class com.submission.core.data.datasource.Resource$Success { *; }
+-keep class com.submission.core.data.datasource.Resource { *; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep DataSource classes and their members
+-keep class com.submission.core.data.datasource.local.LocalDataSource { *; }
+-keep class com.submission.core.data.datasource.remote.RemoteDataSource { *; }
+-keep class com.submission.core.data.datasource.remote.retrofit.ApiService { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Keep DI modules and their providers
+-keep class com.submission.core.di.** { *; }
+-keep class com.submission.core.di.DatabaseModule { *; }
+-keep class com.submission.core.di.NetworkModule { *; }
+-keep class com.submission.core.di.RepositoryModule { *; }
+
+# Keep domain classes and their members
+-keep class com.submission.core.domain.model.Movie { *; }
+-keep class com.submission.core.domain.usecase.MovieInteractor { *; }
+-keep class com.submission.core.domain.usecase.MovieUseCase { *; }
+
+# Keep UI classes and their members
+-keep class com.submission.core.presentation.MovieAdapter { *; }
+-keep class com.submission.core.presentation.MovieAdapter$OnItemClickCallback { *;}
+
+# Keep utility classes
+-keep class com.submission.core.utils.AppExecutors { *; }
+-keep class com.submission.core.utils.DarkMode { *; }
+
+-dontwarn java.lang.invoke.StringConcatFactory
+
+
+

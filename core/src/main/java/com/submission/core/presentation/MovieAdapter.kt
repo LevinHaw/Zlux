@@ -39,7 +39,7 @@ class MovieAdapter(
                 .load(movie.fullPosterPath)
                 .into(binding.ivPoster)
 
-            binding?.apply {
+            binding.apply {
                 tvTitleMovie.text = movie.title
                 tvOverview.text = movie.overview
                 tvDate.text = movie.releaseDate
