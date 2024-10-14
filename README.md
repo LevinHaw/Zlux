@@ -46,5 +46,5 @@ base url : https://api.themoviedb.org/3/
 
 1. Download repository or fork
 2. Open project on Android Studio
-3. Add your API_KEY for accessing Map API in google cloud console
+3. Add your API_KEY for accessing from theme movie db website
 4. Run the app
