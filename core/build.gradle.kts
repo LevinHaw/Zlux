@@ -22,13 +22,13 @@ android {
         buildConfigField(
             "String",
             "BASE_URL",
-            "\"https://api.themoviedb.org/3/\""
+            "\"base_url\""
         )
 
         buildConfigField(
             "String",
             "API_KEY",
-            "\"ec989411a38f1bf1e93a8761b1602661\""
+            "\"your_api_key\""
         )
     }
 

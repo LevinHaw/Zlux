@@ -10,6 +10,9 @@
 -keep class com.submission.core.data.datasource.local.LocalDataSource { *; }
 -keep class com.submission.core.data.datasource.remote.RemoteDataSource { *; }
 -keep class com.submission.core.data.datasource.remote.retrofit.ApiService { *; }
+-keep class com.submission.core.data.datasource.remote.response.DetailPopularMovieResponse { *; }
+-keep class com.submission.core.data.datasource.remote.response.ListPopularMovieResponse { *; }
+-keep class com.submission.core.data.datasource.remote.response.ResultsItem { *; }
 
 # Keep DI modules and their providers
 -keep class com.submission.core.di.** { *; }
@@ -31,6 +34,13 @@
 -keep class com.submission.core.utils.DarkMode { *; }
 
 -dontwarn java.lang.invoke.StringConcatFactory
+
+# Prevent proguard from stripping interface information from TypeAdapter, TypeAdapterFactory,
+# JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
+-keep class * extends com.google.gson.TypeAdapter
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
 
 
 
